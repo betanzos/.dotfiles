@@ -107,3 +107,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+# Start the SSH agent
+eval "$(ssh-agent -s)" >/dev/null 2>&1

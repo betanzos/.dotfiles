@@ -115,3 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Start the SSH agent
+eval "$(ssh-agent -s)" >/dev/null 2>&1
