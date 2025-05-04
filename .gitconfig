@@ -1,0 +1,24 @@
+[user]
+	name = Eduardo Betanzos
+	email = ebetanzos@hotmail.es
+[core]
+	autocrlf = input
+	fileMode = false
+	editor = vim
+	excludesfile = /home/betanzos/.gitignore_global
+[init]
+	defaultBranch = master
+[push]
+	default = current
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	st = status
+	last = log -1 HEAD
+	lone = log --oneline
+	lds = log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]' --decorate --date=short
+	ldr = log --pretty=format:'%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]' --decorate --date=relative
+	tree = log --graph --oneline --all
