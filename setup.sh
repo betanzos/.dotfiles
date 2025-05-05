@@ -3,12 +3,13 @@
 echo "[INFO] Updating packages..."
 sudo apt-get update && sudo apt-get uppgrade -y
 
-echo "[INFO] Installing required packages..."
+echo "[INFO] Installing required (and additional) packages..."
 sudo apt-get install -y \
              curl \
              git \
              stow \
              tmux \
+             tree \
              vim \
              zsh
 echo "       => Done!"

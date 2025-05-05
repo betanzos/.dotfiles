@@ -14,7 +14,7 @@ git clone https://github.com/betanzos/.dotfiles.git
 This script will:
 
 - Upgrade all already installed packages
-- Install the following packages: `curl`, `git`, `stow`, `tmux`, `vim`, `zsh`
+- Install the following packages: `curl`, `git`, `stow`, `tmux`, `tree`, `vim`, `zsh`
 - Create the directory `$HOME/.ssh` and inside the file `known_hosts`
 - Install Oh My Zsh
 - Apply all the dot files by creating symbolic links (_Warning! Already existing files will be overridden_)
