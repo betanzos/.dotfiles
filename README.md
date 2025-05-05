@@ -1,18 +1,28 @@
-## Install required packages
+# How to install my dot files
 
-sudo apt update && \
-sudo apt install -y \
-         curl \
-         git \
-         stow \
-         tmux \
-         vim \
-         zsh
+**1. Clone the git repository**
 
-## Make ZSH the default shell
+Since the repo is public it can be cloned via HTTPS without authentication. An alternative could be downloading the repository from the GitHub web.
 
-chsh -s $(which zsh) 
+```bash
+cd $HOME && \
+git clone https://github.com/betanzos/.dotfiles.git
+```
 
-## Install oh-my-zsh
+**2. Execute the setup script**
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+This script will:
+
+- Upgrade all already installed packages
+- Install the following packages: `curl`, `git`, `stow`, `tmux`, `vim`, `zsh`
+- Create the directory `$HOME/.ssh` and inside the file `known_hosts`
+- Install Oh My Zsh
+- Apply all the dot files by creating symbolic links (_Warning! Already existing files will be overridden_)
+- Change the remove url for the `.dotfiles` repository to use the SSH variant
+
+> [!WARNING]
+> Make sure the `setup.sh` file has execution permissions
+
+```bash
+cd $HOME/.dotfiles && ./setup.sh
+```
