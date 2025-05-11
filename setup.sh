@@ -15,7 +15,7 @@ sudo apt-get install -y \
 echo "       => Done!"
 			 
 echo "[INFO] Creating SSH dir..."
-mkdir $HOME/.ssh
+mkdir -p $HOME/.ssh
 touch $HOME/.ssh/known_hosts
 echo "       => Done!"
 
