@@ -21,7 +21,7 @@ echo "       => Done!"
 
 echo "[INFO] Installing oh-my-zsh..."
 chsh -s $(which zsh) && \
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 echo "       => Done!"
 
 echo "[INFO] Applying my dot files..."
