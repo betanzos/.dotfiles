@@ -1,0 +1,22 @@
+[window]
+decorations = "none"
+opacity = 0.8
+startup_mode = "Maximized"
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+size = 15
+
+[[keyboard.bindings]]
+action = "Paste"
+mods = "Control"
+key = "V"
+
+[[keyboard.bindings]]
+action = "Copy"
+mods = "Control"
+key = "C"
+
