@@ -1,4 +1,3 @@
-#!/bin/bash
 #========================================================================
 # Script name:  setup.sh
 # Description:  This script is for setting up my environment in
@@ -29,7 +28,7 @@
 # ENSURE NEEDED PERMISSIONS
 # Prevent run as root because sometimes when executed as root the
 # script $HOME points to /root instead of the current user home dir
-if [[ $EUID -eq 0 ]]; then
+if [ $(id -u) -eq 0 ]; then
     echo "[ERROR] This script should not be running using sudo or as the root user"
 	echo
     exit 1
@@ -38,7 +37,7 @@ fi
 # Show sudo login in terminal
 sudo -i echo
 
-if [ ! $? -eq 0 ]; then
+if [ $? -ne 0 ]; then
     echo
     echo "[ERROR] Wrong password"
     echo
@@ -96,7 +95,7 @@ echo "       => Done!\n"
 
 
 # ONLY FOR GNOME
-if [ "${XDG_CURRENT_DESKTOP,,}" = "gnome" ]; then
+if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
     echo "[INFO] Customizing default GNOME settings..."
     gsettings set org.gnome.desktop.interface accent-color '"purple"' && \
     gsettings set org.gnome.desktop.interface clock-format '"24h"' && \
