@@ -8,6 +8,9 @@
 #
 # Usage:        sh -c "$(curl -sSL https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh)"
 #
+#               or
+#
+#               sh -c "$(wget -q https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh -O -)"
 #
 # Copyright © 2025  Eduardo Betanzos
 #
