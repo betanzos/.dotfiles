@@ -185,4 +185,6 @@ fi
 echo "[INFO] Dot files setup finished!"
 echo
 echo
-echo "Close the current session to apply all changes!"
+echo "---------------------------------"
+echo "Log out to apply all changes!!!"
+echo "---------------------------------"
