@@ -6,11 +6,11 @@
 # Author:       Eduardo Betanzos
 # Email:        ebetanzos@outlook.com
 #
-# Usage:        sh -c "$(curl -sSL https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh)"
+# Usage:        bash -c "$(curl -sSL https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh)"
 #
 #               or
 #
-#               sh -c "$(wget -q https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh -O -)"
+#               bash -c "$(wget -q https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh -O -)"
 #
 # Copyright © 2025  Eduardo Betanzos
 #
@@ -98,7 +98,7 @@ echo "       => Done!\n"
 
 
 # ONLY FOR GNOME
-if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     sudo chmod +x $HOME/.dotfiles/additional/setup-gnome.sh
     $HOME/.dotfiles/additional/setup-gnome.sh
 fi

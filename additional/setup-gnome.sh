@@ -1,5 +1,5 @@
 # EXECUTE ONLY IF THE CURRENT DESKTOP IS GNOME
-if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     echo "[INFO] Customizing default GNOME settings..."
     gsettings set org.gnome.desktop.interface accent-color '"purple"'
     gsettings set org.gnome.desktop.interface clock-format '"24h"'
