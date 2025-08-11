@@ -63,7 +63,6 @@ sudo apt-get install -y \
              gimp \
              git \
              neovim \
-             onedriver \
              qbittorrent \
              stow \
              tmux \
