@@ -63,12 +63,14 @@ sudo apt-get install -y \
              gimp \
              git \
              neovim \
+             notepadqq \
              qbittorrent \
              stow \
              tmux \
              tree \
              unzip \
              vlc \
+             zip \
              zsh
 echo "       => Done!\n"
 
