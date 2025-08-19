@@ -63,6 +63,7 @@ sudo apt-get install -y \
              gimp \
              git \
              neovim \
+             net-tools \
              notepadqq \
              qbittorrent \
              stow \
