@@ -11,7 +11,8 @@ mkdir -p ~/OneDrive && \
 
 
 # create the script to mount OneDrive
-echo "rclone --vfs-cache-mode full mount OneDrive: ~/OneDrive &" > ~/.mount-onedrive.sh && \
+echo "#!/bin/bash
+rclone --vfs-cache-mode full mount OneDrive: ~/OneDrive &" > ~/.mount-onedrive.sh && \
 sudo chmod +x ~/.mount-onedrive.sh && \
 
 
