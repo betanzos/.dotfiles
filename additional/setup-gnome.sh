@@ -3,12 +3,12 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     echo "[INFO] Customizing default GNOME settings..."
     gsettings set org.gnome.desktop.interface accent-color '"purple"'
     gsettings set org.gnome.desktop.interface clock-format '"24h"'
-    gsettings set org.gnome.desktop.interface color-scheme '"default"'
+    gsettings set org.gnome.desktop.interface color-scheme '"prefer-dark"'
     gsettings set org.gnome.desktop.interface enable-animations false
     gsettings set org.gnome.desktop.interface enable-hot-corners false
     gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
     gsettings set org.gnome.mutter dynamic-workspaces false
-    gsettings set org.gnome.mutter overlay-key ''  #disable default behavior of Super key
+    gsettings set org.gnome.mutter overlay-key 'Super'
     gsettings set org.gnome.shell.app-switcher current-workspace-only true
     gsettings set org.gnome.shell.window-switcher current-workspace-only true
     echo "       => Done!\n"    
@@ -104,7 +104,8 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     pipx install gnome-extensions-cli --system-site-packages && \
     gext install disable-workspace-switcher-overlay@cleardevice \
                  space-bar@luchrioh \
-		 just-perfection-desktop@just-perfection
+		 just-perfection-desktop@just-perfection \
+		 pip-on-top@rafostar.github.com
     echo "       => Done!\n"
 
 
