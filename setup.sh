@@ -58,10 +58,12 @@ echo "       => Done!\n"
 echo "[INFO] Installing additional packages..."
 sudo apt-get install -y \
              alacritty \
+             build-essential \
              curl \
              ffmpeg \
              gimp \
              git \
+             libgmp-dev \
              neovim \
              net-tools \
              notepadqq \
@@ -77,6 +79,10 @@ echo "       => Done!\n"
 
 
 # SET UP MY ENVIRONMENT
+echo "[INFO] INstalling sdkman..."
+curl -s "https://get.sdkman.io" | bash
+echo "       => Done!\n"
+
 echo "[INFO] Creating SSH dir..."
 mkdir -p $HOME/.ssh
 touch $HOME/.ssh/known_hosts
