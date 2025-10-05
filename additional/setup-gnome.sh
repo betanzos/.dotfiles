@@ -105,7 +105,8 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     gext install disable-workspace-switcher-overlay@cleardevice \
                  space-bar@luchrioh \
 		 just-perfection-desktop@just-perfection \
-		 pip-on-top@rafostar.github.com
+		 pip-on-top@rafostar.github.com \
+                 Bluetooth-Battery-Meter@maniacx.github.com
     echo "       => Done!\n"
 
 
@@ -115,6 +116,8 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-background-color '"rgb(145,65,172)"' #purple
     dconf write /org/gnome/shell/extensions/space-bar/behavior/scroll-wheel '"disabled"'
     dconf write /org/gnome/shell/extensions/pip-on-top/stick 'true'
+    dconf write /org/gnome/shell/extensions/Bluetooth-Battery-Meter/enable-multi-indicator-mode 'true'
+    dconf write /org/gnome/shell/extensions/Bluetooth-Battery-Meter/level-bar-position '2' # below
     echo "       => Done!"
 fi
 
