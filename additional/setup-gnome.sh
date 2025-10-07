@@ -83,7 +83,7 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     ## open terminal
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name '"Open terminal"'
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command '"alacritty"'
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding '"<Alt>Return"'
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding '"<Super>Return"'
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name '"Open terminal"'
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings '["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"]'
     echo "       => Done!\n"
