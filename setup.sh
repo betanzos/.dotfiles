@@ -80,7 +80,7 @@ echo "       => Done!\n"
 
 # SET UP MY ENVIRONMENT
 echo "[INFO] INstalling sdkman..."
-curl -s "https://get.sdkman.io" | bash
+curl -s "https://get.sdkman.io?rcupdate=false" | bash
 echo "       => Done!\n"
 
 echo "[INFO] Creating SSH dir..."
