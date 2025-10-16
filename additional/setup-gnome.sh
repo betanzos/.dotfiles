@@ -111,6 +111,7 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
 
 
     echo "[INFO] Customizing GNOME appearance through extensions..."
+    dconf write /org/gnome/shell/extensions/just-perfection/animation '0' # no animations
     dconf write /org/gnome/shell/extensions/just-perfection/clock-menu-position '1' #right
     dconf write /org/gnome/shell/extensions/just-perfection/top-panel-position '1' #bottom
     dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-background-color '"rgb(145,65,172)"' #purple
