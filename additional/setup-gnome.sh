@@ -106,7 +106,8 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
                  space-bar@luchrioh \
 		 just-perfection-desktop@just-perfection \
 		 pip-on-top@rafostar.github.com \
-                 Bluetooth-Battery-Meter@maniacx.github.com
+                 Bluetooth-Battery-Meter@maniacx.github.com \
+                 appindicatorsupport@rgcjonas.gmail.com
     echo "       => Done!\n"
 
 
