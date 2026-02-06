@@ -18,6 +18,7 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     # misc
     gsettings set org.gnome.settings-daemon.plugins.media-keys search '["<Alt>space"]'
     gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>Tab"]'
+    gsettings set org.gnome.desktop.wm.keybindings switch-applications '[]'
     gsettings set org.gnome.settings-daemon.plugins.media-keys www '["<Super>b"]'
     gsettings set org.gnome.shell.keybindings show-screenshot-ui '["<Shift><Super>s"]'
 
