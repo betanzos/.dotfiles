@@ -50,32 +50,24 @@ fi
 echo
 
 
-# UPDATE AND INSTALL PACKAGES
-echo "[INFO] Updating packages..."
-sudo apt-get update && sudo apt-get upgrade -y
-echo "       => Done!\n"
+# INCLUDES NEEDED SOURCES
+. $HOME/.dotfiles/utils/distro.sh
+. $HOME/.dotfiles/additional/install-packages.sh
 
-echo "[INFO] Installing additional packages..."
-sudo apt-get install -y \
-             alacritty \
-             build-essential \
-             curl \
-             ffmpeg \
-             gimp \
-             git \
-             libgmp-dev \
-             neovim \
-             net-tools \
-             notepadqq \
-             qbittorrent \
-             stow \
-             tmux \
-             tree \
-             unzip \
-             vlc \
-             zip \
-             zsh
-echo "       => Done!\n"
+
+# UPDATE AND INSTALL PACKAGES
+. $HOME/.dotfiles/utils/distro.sh
+distro=$(get_distro_id)
+case "$distro" in
+    debian) $(install_debian_packages) ;;
+
+    opensuse-tumbleweed) $(install_opensuse_tumbleweed_packages) ;;
+
+    *)
+        echo "[ERROR] Setup failed. Unknown distro: " $distro
+        exit 1
+    ;;
+esac
 
 
 # SET UP MY ENVIRONMENT
