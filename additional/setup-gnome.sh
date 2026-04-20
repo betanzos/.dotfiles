@@ -1,5 +1,24 @@
+# ===========================================================================
+# THE DISTRO ID IS EXPECTED TO BE RECEIVED AS THE FIRST PARAM OF THE SCRIPT
+#
+# Usage:
+#   ./setup-gnome.sh debian
+#
+#============================================================================
+
+
 # EXECUTE ONLY IF THE CURRENT DESKTOP IS GNOME
 if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
+
+
+    if [ $# -gt 0 ]; then
+        distro=$1
+    else
+        echo "[ERROR] Invalid execution of 'setup-gnome.sh'. The distro-ID param is missing."
+        exit 1
+    fi
+
+
     echo "[INFO] Customizing default GNOME settings..."
     gsettings set org.gnome.desktop.interface accent-color '"purple"'
     gsettings set org.gnome.desktop.interface clock-format '"24h"'
@@ -90,23 +109,18 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     echo "       => Done!\n"
 
 
-    echo "[INFO] Installing GNOME packages..."
-    sudo apt-get install -y \
-                 dconf-editor \
-                 gnome-shell-extension-manager \
-                 gnome-tweaks \
-                 pipx
-    echo "       => Done!\n"
-
-
-    echo "[INFO] Installing GNOME extensions..."
-    sudo apt install pipx -y && \
+    # INSTALL GNOME PACKAGES
+    sudo chmod +x $HOME/.dotfiles/additional/install-gnome-packages.sh && \
+    $HOME/.dotfiles/additional/install-gnome-packages.sh $distro && \
     export PATH="$HOME/.local/bin:$PATH" && \
+
+
+    echo "[INFO] Installing GNOME extensions..." && \
     pipx install gnome-extensions-cli --system-site-packages && \
     gext install disable-workspace-switcher-overlay@cleardevice \
                  space-bar@luchrioh \
-		 just-perfection-desktop@just-perfection \
-		 pip-on-top@rafostar.github.com \
+                 just-perfection-desktop@just-perfection \
+                 #pip-on-top@rafostar.github.com \
                  Bluetooth-Battery-Meter@maniacx.github.com \
                  appindicatorsupport@rgcjonas.gmail.com
     echo "       => Done!\n"
@@ -125,4 +139,3 @@ if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
     dconf write /org/gnome/shell/extensions/Bluetooth-Battery-Meter/level-bar-position '2' # below
     echo "       => Done!"
 fi
-
