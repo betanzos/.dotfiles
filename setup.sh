@@ -56,22 +56,12 @@ echo
 
 
 # UPDATE AND INSTALL PACKAGES
-. $HOME/.dotfiles/utils/distro.sh
 distro=$(get_distro_id)
-case "$distro" in
-    debian) $(install_debian_packages) ;;
-
-    opensuse-tumbleweed) $(install_opensuse_tumbleweed_packages) ;;
-
-    *)
-        echo "[ERROR] Setup failed. Unknown distro: " $distro
-        exit 1
-    ;;
-esac
+upgrade_install_packages $distro
 
 
 # SET UP MY ENVIRONMENT
-echo "[INFO] INstalling sdkman..."
+echo "[INFO] Installing sdkman..."
 curl -s "https://get.sdkman.io?rcupdate=false" | bash
 echo "       => Done!\n"
 
@@ -100,8 +90,8 @@ echo "       => Done!\n"
 
 # ONLY FOR GNOME
 if [[ "$XDG_CURRENT_DESKTOP" =~ "GNOME" ]]; then  # non-posix test, it need bash
-    sudo chmod +x $HOME/.dotfiles/additional/setup-gnome.sh
-    $HOME/.dotfiles/additional/setup-gnome.sh
+    . $HOME/.dotfiles/additional/setup-gnome.sh
+    setup_gnome $distro
 fi
 
 

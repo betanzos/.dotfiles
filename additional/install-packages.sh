@@ -1,4 +1,4 @@
-function install_debian_packages() {
+function __install_debian_packages() {
     echo "[INFO] Updating Debian packages..."
     sudo apt-get update && sudo apt-get upgrade -y
     echo "       => Done!\n"
@@ -26,7 +26,7 @@ function install_debian_packages() {
     echo "       => Done!\n"
 }
 
-function install_opensuse_tumbleweed_packages(){
+function __install_opensuse_tumbleweed_packages(){
     echo "[INFO] Updating openSUSE Tumbleweeb packages..."
     sudo zypper refresh && sudo zypper update -y
     echo "       => Done!\n"
@@ -52,4 +52,20 @@ function install_opensuse_tumbleweed_packages(){
                 zip \
                 zsh
     echo "       => Done!\n"
+}
+
+# Usage:
+# upgrade_install_packages $distro
+function upgrade_install_packages() {
+    local distro=$1
+    case "$distro" in
+        debian) __install_debian_packages ;;
+
+        opensuse-tumbleweed) __install_opensuse_tumbleweed_packages ;;
+
+        *)
+            echo "[ERROR] Installing distro-specific packages. Unknown distro: " $distro
+            exit 1
+        ;;
+    esac
 }
