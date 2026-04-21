@@ -332,7 +332,7 @@ function __install_packages_gnome() {
         ;;
 
         *)
-            echo "[ERROR] Execution of __install_gnome_packages function failed. Unknown distro: " $distro
+            echo "[ERROR] Execution of __install_packages_gnome function failed. Unknown distro: " $distro
             exit 1
         ;;
     esac
