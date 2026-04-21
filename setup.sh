@@ -1,7 +1,7 @@
 #========================================================================
 # Script name:  setup.sh
 # Description:  This script is for setting up my environment in
-#               Debian-based distros
+#               Debian and openSUSE Tumbleweed
 #
 # Author:       Eduardo Betanzos
 # Email:        ebetanzos@outlook.com
@@ -12,7 +12,7 @@
 #
 #               bash -c "$(wget -q https://raw.githubusercontent.com/betanzos/.dotfiles/master/setup.sh -O -)"
 #
-# Copyright © 2025  Eduardo Betanzos
+# Copyright © 2026  Eduardo Betanzos
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -113,9 +113,9 @@ function __get_distro_id() {
 function __upgrade_install_packages() {
     local distro=$1
     case "$distro" in
-        debian) __install_debian_packages ;;
+        debian) __install_packages_debian ;;
 
-        opensuse-tumbleweed) __install_opensuse_tumbleweed_packages ;;
+        opensuse-tumbleweed) __install_packages_opensuse_tumbleweed ;;
 
         *)
             echo "[ERROR] Installing distro-specific packages. Unknown distro: " $distro
@@ -124,7 +124,7 @@ function __upgrade_install_packages() {
     esac
 }
 
-function __install_debian_packages() {
+function __install_packages_debian() {
     echo "[INFO] Updating Debian packages..."
     sudo apt-get update && sudo apt-get upgrade -y
     echo "       => Done!\n"
@@ -152,7 +152,7 @@ function __install_debian_packages() {
     echo "       => Done!\n"
 }
 
-function __install_opensuse_tumbleweed_packages(){
+function __install_packages_opensuse_tumbleweed(){
     echo "[INFO] Updating openSUSE Tumbleweeb packages..."
     sudo zypper refresh && sudo zypper update -y
     echo "       => Done!\n"
@@ -276,7 +276,7 @@ function __setup_gnome() {
 
         # INSTALL GNOME PACKAGES
         local distro=$1
-        __install_gnome_packages $distro && \
+        __install_packages_gnome $distro && \
         export PATH="$HOME/.local/bin:$PATH" && \
         echo "[INFO] Installing GNOME extensions..." && \
         pipx install gnome-extensions-cli --system-site-packages && \
@@ -304,7 +304,7 @@ function __setup_gnome() {
     fi
 }
 
-function __install_gnome_packages() {
+function __install_packages_gnome() {
     local distro=$1
     case "$distro" in
         ubuntu|debian)
