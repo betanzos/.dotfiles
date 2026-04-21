@@ -269,8 +269,13 @@ function __setup_gnome() {
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name '"Open terminal"'
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command '"alacritty"'
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding '"<Super>Return"'
-        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name '"Open terminal"'
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings '["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"]'
+        ## open file explorer
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name '"Open file explorer"'
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command '"nautilus"'
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding '"<Super>F"'
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings '["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"]'
+        echo "       => Done!\n"
         echo "       => Done!\n"
 
 
