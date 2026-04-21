@@ -1,4 +1,4 @@
-# How to install my dot files
+# How to setup your system like mine
 
 **1. Run one of the following commands**
 ```bash
@@ -14,7 +14,7 @@ bash -c "$(wget -q https://raw.githubusercontent.com/betanzos/.dotfiles/master/s
 ```
 
 > [!WARNING]
-> So far this script is intended to be used in GNOME-based instalations of Debian or openSUSE Tumbleweed
+> So far this script is intended to be used in GNOME-based installations of Debian or openSUSE Tumbleweed
 
 
 # What will happen to my system
@@ -106,3 +106,17 @@ Several of the experience described above is the result of using the following e
 - Switch between windows (current workspace only): `Alt+Tab`
 - Switch to workspace: `Super+<workspace number>`
 - Move focused windowd to workspace: `Super+Shift+<workspace number>`
+
+## 4. Settings
+As part of this process I also set up my dot files using `stow` + some custom settings through
+using Oh My Zsh. Since this is my setup, you will need to review some of these settings in order
+to make it work for you.
+
+### .gitconfig
+Update the `user.name` and `user.email` entries to use yours.
+
+### SSH
+The file `.my_custom/ssh.zsh` has some code to add my own key for GitHub to the SSH authentication
+agent. This only happen in case the file exist. So, if the file is missing nothing will happen.
+
+The `.ssh/config` file configure the same key as the key to be used with GitHub.
