@@ -51,13 +51,13 @@ echo
 
 
 # INCLUDES NEEDED SOURCES
-. $HOME/.dotfiles/utils/distro.sh
-. $HOME/.dotfiles/additional/install-packages.sh
+. $HOME/.dotfiles/utils/distro.sh || exit 1
+. $HOME/.dotfiles/additional/install-packages.sh || exit 1
 
 
 # UPDATE AND INSTALL PACKAGES
 distro=$(get_distro_id)
-upgrade_install_packages $distro
+upgrade_install_packages $distro || exit 1
 
 
 # SET UP MY ENVIRONMENT
