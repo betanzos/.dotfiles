@@ -160,7 +160,6 @@ function __install_packages_opensuse_tumbleweed(){
     echo "[INFO] Installing additional openSUSE Tumbleweeb packages..."
     sudo zypper install -y \
                 alacritty \
-                build-essential \
                 curl \
                 ffmpeg-7 \
                 gimp \
