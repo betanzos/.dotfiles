@@ -286,11 +286,10 @@ function __setup_gnome() {
         echo "[INFO] Installing GNOME extensions..." && \
         pipx install gnome-extensions-cli --system-site-packages && \
         gext install disable-workspace-switcher-overlay@cleardevice \
-                    space-bar@luchrioh \
-                    just-perfection-desktop@just-perfection \
-                    #pip-on-top@rafostar.github.com \
-                    Bluetooth-Battery-Meter@maniacx.github.com \
-                    appindicatorsupport@rgcjonas.gmail.com
+                     space-bar@luchrioh \
+                     just-perfection-desktop@just-perfection \
+                     Bluetooth-Battery-Meter@maniacx.github.com \
+                     appindicatorsupport@rgcjonas.gmail.com
         echo "       => Done!\n"
 
 
@@ -302,7 +301,6 @@ function __setup_gnome() {
         dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-background-color '"rgb(145,65,172)"' #purple
         dconf write /org/gnome/shell/extensions/space-bar/behavior/scroll-wheel '"disabled"'
         dconf write /org/gnome/shell/extensions/space-bar/behavior/toggle-overview 'false'
-        dconf write /org/gnome/shell/extensions/pip-on-top/stick 'true'
         dconf write /org/gnome/shell/extensions/Bluetooth-Battery-Meter/enable-multi-indicator-mode 'true'
         dconf write /org/gnome/shell/extensions/Bluetooth-Battery-Meter/level-bar-position '2' # below
         echo "       => Done!"
