@@ -200,10 +200,14 @@ function __setup_gnome() {
 
         echo "[INFO] Creating my keybindings..."
         # misc
-        gsettings set org.gnome.settings-daemon.plugins.media-keys search '["<Alt>space"]'
+        gsettings set org.gnome.desktop.wm.keybindings activate-window-menu '[]'
+        gsettings set org.gnome.desktop.wm.keybindings cycle-windows '[]'
+        gsettings set org.gnome.desktop.wm.keybindings cycle-windows-backward '[]'
         gsettings set org.gnome.desktop.wm.keybindings panel-run-dialog  '["<Super>r"]'
         gsettings set org.gnome.desktop.wm.keybindings switch-windows '["<Alt>Tab"]'
         gsettings set org.gnome.desktop.wm.keybindings switch-applications '[]'
+        gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts '[]'
+        gsettings set org.gnome.settings-daemon.plugins.media-keys search '["<Alt>space"]'
         gsettings set org.gnome.settings-daemon.plugins.media-keys www '["<Super>b"]'
         gsettings set org.gnome.shell.keybindings show-screenshot-ui '["<Shift><Super>s"]'
 
