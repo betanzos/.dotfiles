@@ -192,6 +192,7 @@ function __setup_gnome() {
         gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
         gsettings set org.gnome.mutter dynamic-workspaces false
         gsettings set org.gnome.mutter overlay-key 'Super'
+        gsettings set org.gnome.shell always-show-log-out true
         gsettings set org.gnome.shell.app-switcher current-workspace-only true
         gsettings set org.gnome.shell.window-switcher current-workspace-only true
         echo "       => Done!\n"    
