@@ -273,7 +273,7 @@ function __setup_gnome() {
         ## open file explorer
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name '"Open file explorer"'
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command '"nautilus"'
-        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding '"<Super>F"'
+        dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding '"<Super>f"'
         dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings '["/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"]'
         echo "       => Done!\n"
         echo "       => Done!\n"
