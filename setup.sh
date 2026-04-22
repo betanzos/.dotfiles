@@ -364,11 +364,11 @@ function __install_packages_gnome() {
 
         fedora)
             echo "[INFO] Installing Fedora-based pacakges for GNOME..."
-            sudo zypper install -y \
-                        dconf-editor \
-                        gnome-extensions-app \
-                        gnome-tweaks \
-                        pipx 
+            sudo dnf install -y \
+                     dconf-editor \
+                     gnome-extensions-app \
+                     gnome-tweaks \
+                     pipx 
             echo "       => Done!\n"
         ;;
 
