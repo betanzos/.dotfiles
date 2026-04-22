@@ -187,10 +187,9 @@ function __install_packages_fedora(){
     echo "       => Done!\n"
 
     echo "[INFO] Installing additional Fedora packages..."
-    sudo dnf install -y \
+    sudo dnf install --skip-broken -y \
              alacritty \
              curl \
-             ffmpeg \
              gimp \
              git \
              neovim \

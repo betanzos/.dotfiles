@@ -67,12 +67,10 @@ In addition, the following packages will be installed (if missing).
 ### openSUSE Tumbleweed
 - alacritty
 - curl
-- ffmpeg
 - gimp
 - git
 - neovim
 - net-tools
-- 
 - qbittorrent
 - showtime
 - stow
