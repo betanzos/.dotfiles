@@ -1,7 +1,7 @@
 #========================================================================
 # Script name:  setup.sh
 # Description:  This script is for setting up my environment in
-#               Debian and openSUSE Tumbleweed
+#               Debian, openSUSE Tumbleweed, and Fedora Workstation
 #
 # Author:       Eduardo Betanzos
 # Email:        ebetanzos@outlook.com
@@ -117,6 +117,8 @@ function __upgrade_install_packages() {
 
         opensuse-tumbleweed) __install_packages_opensuse_tumbleweed ;;
 
+        fedora) __install_packages_fedora ;;
+
         *)
             echo "[ERROR] Installing distro-specific packages. Unknown distro: " $distro
             exit 1
@@ -176,6 +178,32 @@ function __install_packages_opensuse_tumbleweed(){
                 vlc \
                 zip \
                 zsh
+    echo "       => Done!\n"
+}
+
+function __install_packages_fedora(){
+    echo "[INFO] Updating Fedora packages..."
+    sudo dnf makecache && sudo dnf update -y
+    echo "       => Done!\n"
+
+    echo "[INFO] Installing additional Fedora packages..."
+    sudo dnf install -y \
+             alacritty \
+             curl \
+             ffmpeg \
+             gimp \
+             git \
+             neovim \
+             net-tools \
+             qbittorrent \
+             showtime \
+             stow \
+             tmux \
+             tree \
+             unzip \
+             vlc \
+             zip \
+             zsh
     echo "       => Done!\n"
 }
 
@@ -332,6 +360,16 @@ function __install_packages_gnome() {
                         extension-manager \
                         gnome-tweaks \
                         python314-pipx 
+            echo "       => Done!\n"
+        ;;
+
+        fedora)
+            echo "[INFO] Installing Fedora-based pacakges for GNOME..."
+            sudo zypper install -y \
+                        dconf-editor \
+                        gnome-extensions-app \
+                        gnome-tweaks \
+                        pipx 
             echo "       => Done!\n"
         ;;
 

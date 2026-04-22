@@ -64,6 +64,25 @@ In addition, the following packages will be installed (if missing).
 - zip
 - zsh
 
+### openSUSE Tumbleweed
+- alacritty
+- curl
+- ffmpeg
+- gimp
+- git
+- neovim
+- net-tools
+- 
+- qbittorrent
+- showtime
+- stow
+- tmux
+- tree
+- unzip
+- vlc
+- zip
+- zsh
+
 ## 2. Other tools
 In addition to the packages above, the script will install [SDKMAN!](https://sdkman.io/)
 and [Oh My Zsh](https://ohmyz.sh/) with a custom configuration.
