@@ -322,6 +322,7 @@ function __setup_gnome() {
         gext install disable-workspace-switcher-overlay@cleardevice \
                      space-bar@luchrioh \
                      just-perfection-desktop@just-perfection \
+                     pip-on-top@rafostar.github.com \
                      Bluetooth-Battery-Meter@maniacx.github.com \
                      appindicatorsupport@rgcjonas.gmail.com
         echo "       => Done!\n"
