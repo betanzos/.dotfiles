@@ -197,6 +197,7 @@ function __install_packages_fedora(){
              qbittorrent \
              showtime \
              stow \
+             sushi \
              tmux \
              tree \
              unzip \
