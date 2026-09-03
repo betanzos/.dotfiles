@@ -4,7 +4,7 @@
 [core]
 	autocrlf = input
 	fileMode = false
-	editor = vim
+	editor = nvim
 	excludesfile = /home/betanzos/.gitignore_global
 [init]
 	defaultBranch = master
